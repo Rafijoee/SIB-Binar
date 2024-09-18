@@ -12,7 +12,7 @@ class Rumah {
 }
 // tes lagi
 console.log(Rumah.isInIndonesia); 
-
+console.log(`jalan ada di ${this.jalan}`);
 Rumah.prototype.rumah2 = (provinsi, kota) => {
     console.log(`Rumah saya berada di ${provinsi}, ${kota}, Indonesia.`);
 }
