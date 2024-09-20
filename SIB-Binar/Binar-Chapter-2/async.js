@@ -1,16 +1,27 @@
-const requestPromise = (url) => {
-  return new Promise((resolve, reject) => {
-    const delay = Math.floor(Math.random() * 4500) + 500;
-    {
-      setTimeout(() => {
-        if (delay > 2000) {
-          reject("Connection timeout");
-        } else {
-          resolve(`Success! ${url} diunduh dalam ${delay}ms`);
-        }
-      }, delay);
-    }
-  });
-};
+// const requestPromise = (url) => {
+//   return new Promise((resolve, reject) => {
+//     const delay = Math.floor(Math.random() * 4500) + 500;
+//     {
+//       setTimeout(() => {
+//         if (delay > 2000) {
+//           reject("Connection timeout");
+//         } else {
+//           resolve(`Success! ${url} diunduh dalam ${delay}ms`);
+//         }
+//       }, delay);
+//     }
+//   });
+// };
 
-requestPromise("www.google.com")
+// requestPromise("www.google.com")
+
+
+let punyabuku = false;
+
+const beliBuku = new Promise((resolve) => {
+  setTimeout(() => {
+    (punyabuku) {
+
+
+
+const gambar = judul => {
