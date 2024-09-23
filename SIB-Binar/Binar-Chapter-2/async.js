@@ -15,13 +15,20 @@
 
 // requestPromise("www.google.com")
 
+const strArray = ["Javascript", "Python", "PHP", "Java", "C++"];
 
-let punyabuku = false;
+function foreach (arr, callback) {
+  const newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArray.push(callback(arr[i], i));
+  }
+  return newArray;
+}
+  
 
-const beliBuku = new Promise((resolve) => {
-  setTimeout(() => {
-    (punyabuku) {
+const lenArray = foreach(strArray, (item, index) => {
+  return item.length;
+});
 
+console.log(lenArray); // [10, 6, 3, 4, 3]
 
-
-const gambar = judul => {
