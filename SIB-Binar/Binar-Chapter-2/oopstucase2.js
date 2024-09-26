@@ -123,6 +123,63 @@
 //     }
 // }
 
+
+
+
+
+
+
+
+//Abstraction 
+
+// class Human {
+//     constructor(props){
+//         if (this.constructor === Human){
+//             throw new Error("Abstract class can't be instantiated");
+//         }
+//         let {name, address} = props;
+//         this.name = name;
+//         this.address = address;
+//     }
+
+//     work (){
+//         console.log(`${this.name} is working`);
+//     }
+
+//     introduce(){
+//         console.log(`Hello, my name is ${this.name}, my address is ${this.address}`);
+//     }
+// }
+
+// class Police extends Human {
+//     constructor(props){
+//         super(props);
+//         this.rank = props.rank;
+//     }
+
+//     work (){
+//         console.log(`${this.name} is working as a police`);
+//         super.work();
+//     }
+// }
+
+// const Wiranto = new Police ({name: "Wiranto", address: "Jakarta", rank: "General"});
+// console.log(Wiranto);
+
+// try {
+//     let abstract = new Human({name: "Budi", address: "Jakarta"});
+// } catch (error) {
+//     console.log(error.message);
+// }
+
+
+
+
+
+
+
+
+
 // Deskripsi Kasus:
 // Perusahaan memiliki berbagai jenis karyawan, seperti KaryawanTetap dan KaryawanKontrak. Setiap karyawan memiliki nama, ID, dan gaji dasar. Namun, gaji karyawan tetap dihitung dengan tambahan bonus tetap, sedangkan gaji karyawan kontrak dihitung berdasarkan jam kerja.
 
