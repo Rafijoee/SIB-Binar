@@ -234,3 +234,54 @@
 // console.log(karyawan2);
 // console.log(karyawan3);
 // console.log(karyawan1.hitung_gaji());
+
+
+
+
+// 1. Basic OOP
+// Write a JavaScript program that creates a class called Bank with properties for bank names and branches. Include methods to add a branch, remove a branch, and display all branches. Create an instance of the Bank class and perform operations to add and remove branches.
+
+class Bank {
+    constructor(bankName) {
+        this.bankName = bankName;
+        this.branches = [];
+    }
+
+    addBranch(branchName) {
+        if (this.branches.includes(branchName)) {
+            console.log(`Cabang ${branchName} sudah ada di ${this.bankName}.`);
+            return;
+        }
+        this.branches.push(branchName);
+        console.log(`Cabang ${branchName} berhasil ditambahkan ke ${this.bankName}.`)
+    }
+
+    removeBranch(branchName) {
+        const index = this.branches.indexOf(branchName);
+        if (index !== -1) {
+            this.branches.splice(index, 1);
+            console.log(`Cabang ${branchName} berhasil dihapus dari ${this.bankName}.`);
+        } else {
+            console.log(`Cabang ${branchName} tidak ditemukan di ${this.bankName}.`);
+        }
+    }
+
+    displayBranches() {
+        if (this.branches.length === 0) {
+            console.log(`Tidak ada cabang di ${this.bankName}.`);
+        } else {
+            console.log(`Cabang-cabang di ${this.bankName}:`);
+            this.branches.forEach((branch, index) => {
+                console.log(`${index + 1}. ${branch}`);
+            });
+        }
+    }
+}
+
+const bankbaru = new Bank("Bank BCA");
+bankbaru.addBranch("Jakarta");
+bankbaru.addBranch("Bandung");
+bankbaru.addBranch("Jakarta");
+bankbaru.displayBranches();
+bankbaru.removeBranch("Bandung");
+bankbaru.displayBranches();
