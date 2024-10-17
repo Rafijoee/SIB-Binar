@@ -41,4 +41,27 @@ app.get('/api/v1/users', async (req, res) => {
     return res.json(users);
 });
 
+app.post('/api/v1/categories', async (req, res) => {
+    const createCategory = await prisma.post.create({
+        data: {
+            title: 'How to be Bob',
+            categories: {
+                create: [
+                    {
+                        assignedBy: 'Bob',
+                        assignedAt: new Date(),
+                        category: {
+                            create: {
+                                name: 'New Category'
+                            },
+                        }
+                    }
+                ]
+            }
+        }
+    });
+
+    res.status(201).json(createCategory);
+});
+
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
