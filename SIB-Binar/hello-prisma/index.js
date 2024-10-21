@@ -75,26 +75,80 @@ app.get('/api/v1/users', async (req, res) => {
 /**
  * @swagger
  * /api/v1/categories:
- *   get:
- *     summary: Example route
+ *   post:
+ *     summary: Create a new category
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 description: Title of the post
+ *                 example: "My First Post"
+ *               assignedBy:
+ *                 type: string
+ *                 description: The user assigning the category
+ *                 example: "user123"
+ *               category:
+ *                 type: string
+ *                 description: Name of the category to create
+ *                 example: "Technology"
  *     responses:
- *       200:
- *         description: An example response
+ *       201:
+ *         description: Category created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                   description: The ID of the created post
+ *                   example: "1"
+ *                 title:
+ *                   type: string
+ *                   description: Title of the created post
+ *                   example: "My First Post"
+ *                 categories:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       assignedBy:
+ *                         type: string
+ *                         description: The user who assigned the category
+ *                       assignedAt:
+ *                         type: string
+ *                         format: date-time
+ *                         description: The date and time when the category was assigned
+ *                       category:
+ *                         type: object
+ *                         properties:
+ *                           name:
+ *                             type: string
+ *                             description: Name of the created category
+ *                             example: "Technology"
+ *       400:
+ *         description: Bad request, invalid input
+ *       500:
+ *         description: Internal server error
  */
-
-
-
 app.post('/api/v1/categories', async (req, res) => {
     const createCategory = await prisma.post.create({
         data: {
-            title: 'How to be Bob',
+            title: req.body.title,
             categories: {
                 create: [
                     {
-                        assignedBy: 'Bob',
+                        assignedBy: req.body.assignedBy,
                         assignedAt: new Date(),
                         category: {
-                            create: { name: 'New Category' }
+                            create: {
+                                name: req.body.category
+                            },
                         }
                     }
                 ]
