@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 const prisma = new PrismaClient();
 
-const swaggerJSON = require(/../swagger.json);
+const swaggerJSON = require('./swagger.json');
 const swaggerUI = require('swagger-ui-express');
 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerJSON));
