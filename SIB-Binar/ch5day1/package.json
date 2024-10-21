@@ -1,26 +1,25 @@
 {
-  "name": "hello-prisma",
+  "name": "day3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.1.7",
-    "prisma": "^5.21.0"
-  },
   "dependencies": {
-    "@prisma/client": "^5.21.0",
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
+    "@prisma/client": "^5.20.0",
+    "ejs": "^3.1.10",
     "express": "^4.21.1",
     "joi": "^17.13.3",
+    "nodemon": "^3.1.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.20.0"
   }
 }
